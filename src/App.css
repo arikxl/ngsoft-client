@@ -12,3 +12,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+header {
+  align-items: center;
+  background: rgb(243,0,255);
+  background: linear-gradient(90deg, rgba(243,0,255,1) 0%, rgba(22,182,214,1) 100%);
+  color: white;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+form {
+  margin: 0 auto 1.5rem;
+  border: 1px solid rgba(22,182,214,1);
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  padding:20px
+};

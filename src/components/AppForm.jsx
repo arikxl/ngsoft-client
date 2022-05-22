@@ -1,9 +1,32 @@
 import React from 'react'
+import { getItems } from '../service/pdfservice';
 
-const AppForm = () => {
+const AppForm = ({ setPdfError, setPdfFile }) => {
+
+  const handleFile = (e) => {
+    const file = e.target.files[0];
+    if (file.type !== 'application/pdf') {
+      setPdfError('Pdf file is required');
+    } else {
+      getItems(file);
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (e) => {
+        setPdfError('');
+        setPdfFile(e.target.result);
+      };
+    };
+  };
+
+
   return (
-    <div>AppForm</div>
-  )
-}
+    <form >
+      <label >Upload here your PDF file:</label>
+      &nbsp;
+      <input type="file"
+        onChange={handleFile} />
+    </form>
+  );
+};
 
-export default AppForm
+export default AppForm;

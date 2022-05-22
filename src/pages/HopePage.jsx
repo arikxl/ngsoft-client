@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 
 import AppForm from '../components/AppForm'
 import AppHeader from '../components/AppHeader';
@@ -8,10 +7,14 @@ import TextTest from '../components/TextTest';
 import Viewer from '../components/viewer';
 
 const HopePage = () => {
+
+  const [pdfFile, setPdfFile] = useState(null);
+  const [pdfError, setPdfError] = useState('');
+
   return (
     <div>
         <AppHeader />
-        <AppForm />
+        <AppForm setPdfFile={setPdfFile} setPdfError={setPdfError}/>
         <PdfInfo />
         <TextTest />
         <Viewer />
